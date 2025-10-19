@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patitas Conectadas</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  
+  <div id="splash-screen">
+    <div class="logo">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.864 8.36395C15.864 9.41432 15.0233 10.255 14 10.255C12.9767 10.255 12.136 9.41432 12.136 8.36395C12.136 7.31358 12.9767 6.4729 14 6.4729C15.0233 6.4729 15.864 7.31358 15.864 8.36395Z" fill="#8D5B4C"/>
+            <path d="M10.0455 10.255C11.0688 10.255 11.9095 9.41432 11.9095 8.36395C11.9095 7.31358 11.0688 6.4729 10.0455 6.4729C9.02219 6.4729 8.18152 7.31358 8.18152 8.36395C8.18152 9.41432 9.02219 10.255 10.0455 10.255Z" fill="#8D5B4C"/>
+            <path d="M8.18152 13.9774C9.20488 13.9774 10.0455 13.1367 10.0455 12.0863C10.0455 11.036 9.20488 10.1953 8.18152 10.1953C7.15816 10.1953 6.31749 11.036 6.31749 12.0863C6.31749 13.1367 7.15816 13.9774 8.18152 13.9774Z" fill="#8D5B4C"/>
+            <path d="M15.864 13.9774C16.8874 13.9774 17.728 13.1367 17.728 12.0863C17.728 11.036 16.8874 10.1953 15.864 10.1953C14.8406 10.1953 14 11.036 14 12.0863C14 13.1367 14.8406 13.9774 15.864 13.9774Z" fill="#8D5B4C"/>
+            <path d="M12.0002 18.0001C14.3524 18.0001 16.2729 16.2163 16.2729 14.0455C16.2729 11.8748 14.3524 10.0909 12.0002 10.0909C9.64791 10.0909 7.72742 11.8748 7.72742 14.0455C7.72742 16.2163 9.64791 18.0001 12.0002 18.0001Z" fill="#8D5B4C"/>
+        </svg>
+    </div>
+    <h1>PATITAS CONECTADAS</h1>
+  </div>
+
+  <main id="main-view" class="view-container hidden">
+    <div class="logo">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.864 8.36395C15.864 9.41432 15.0233 10.255 14 10.255C12.9767 10.255 12.136 9.41432 12.136 8.36395C12.136 7.31358 12.9767 6.4729 14 6.4729C15.0233 6.4729 15.864 7.31358 15.864 8.36395Z" fill="#8D5B4C"/>
+            <path d="M10.0455 10.255C11.0688 10.255 11.9095 9.41432 11.9095 8.36395C11.9095 7.31358 11.0688 6.4729 10.0455 6.4729C9.02219 6.4729 8.18152 7.31358 8.18152 8.36395C8.18152 9.41432 9.02219 10.255 10.0455 10.255Z" fill="#8D5B4C"/>
+            <path d="M8.18152 13.9774C9.20488 13.9774 10.0455 13.1367 10.0455 12.0863C10.0455 11.036 9.20488 10.1953 8.18152 10.1953C7.15816 10.1953 6.31749 11.036 6.31749 12.0863C6.31749 13.1367 7.15816 13.9774 8.18152 13.9774Z" fill="#8D5B4C"/>
+            <path d="M15.864 13.9774C16.8874 13.9774 17.728 13.1367 17.728 12.0863C17.728 11.036 16.8874 10.1953 15.864 10.1953C14.8406 10.1953 14 11.036 14 12.0863C14 13.1367 14.8406 13.9774 15.864 13.9774Z" fill="#8D5B4C"/>
+            <path d="M12.0002 18.0001C14.3524 18.0001 16.2729 16.2163 16.2729 14.0455C16.2729 11.8748 14.3524 10.0909 12.0002 10.0909C9.64791 10.0909 7.72742 11.8748 7.72742 14.0455C7.72742 16.2163 9.64791 18.0001 12.0002 18.0001Z" fill="#8D5B4C"/>
+        </svg>
+    </div>
+    <h2>Bienvenido a Patitas Conectadas</h2>
+    <div class="button-container">
+      <button id="login-button" class="btn">🔑 Iniciar sesión</button>
+      <button id="register-button" class="btn">📝 Registrar nuevo usuario</button>
+    </div>
+  </main>
+
+  <main id="login-view" class="view-container hidden">
+    <h2>Iniciar Sesión</h2>
+    <form class="form-container" id="login-form">
+        <div class="form-group">
+            <label for="login-username">Usuario</label>
+            <input type="text" id="login-username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" required>
+            <p id="login-password-error" class="validation-message"></p>
+        </div>
+        <p id="login-error" class="error-message hidden"></p>
+        <div class="button-container">
+            <button type="submit" class="btn" disabled>Ingresar</button>
+            <button type="button" id="register-from-login" class="link-btn">Registrar nuevo usuario</button>
+            <button type="button" id="back-to-main" class="link-btn">Volver a Inicio</button>
+        </div>
+    </form>
+  </main>
+
+  <main id="register-view" class="view-container hidden">
+    <h2>Registrar Nuevo Usuario</h2>
+    <form class="form-container" id="register-form">
+        <div class="profile-pic-container">
+            <img id="profile-pic-preview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAxMy41QzE1LjA5NTMgMTMuNSAxNy42MjUgMTEuMDQ0MyAxNy42MjUgOEExLjUgMS41IDAgMCAwIDE3LjYyNSA1QzE3LjYyNSA2LjA0NDI5IDE1LjA5NTMgMy41IDEyIDMuNUM4LjkwNDcyIDMuNSAzLjA5NDM3IDYuMDQ0MjkgMy4wOTQzNyA4QTEuNSAxLjUgMCAwIDAgMy4wOTQzNyAxMUMzLjA5NDM3IDkuOTU1NzEgOC45MDQ3MiAxMy41IDEyIDEzLjVaTTE5LjUgMjAuNUMxOS41IDIwLjUgMjEgMjAgMjEgMTcuNUMyMSAxNC41IDE1LjUgMTQuNSAxMiAxNC41QzguNSAxNC41IDMgMTQuNSAzIDE3LjVDMyAyMCA0LjUgMjAuNSA0LjUgMjAuNUgxOS41WiIgZmlsbD0iI2NkY2RjZCIvPgo8L3N2Zz4K" alt="Vista previa de perfil">
+            <label for="reg-profile-pic" class="btn">Subir Foto (Opcional)</label>
+            <input type="file" id="reg-profile-pic" name="profile-pic" accept="image/*" class="hidden">
+        </div>
+
+        <div class="form-group">
+            <label for="reg-fullname">Nombre completo</label>
+            <input type="text" id="reg-fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="reg-username">Usuario</label>
+            <input type="text" id="reg-username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="reg-password">Contraseña</label>
+            <input type="password" id="reg-password" name="password" required>
+            <p id="register-password-error" class="validation-message"></p>
+        </div>
+        <div class="form-group">
+            <label for="reg-phone">Teléfono</label>
+            <input type="tel" id="reg-phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="reg-email">Correo</label>
+            <input type="email" id="reg-email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="reg-address">Dirección (Opcional)</label>
+            <input type="text" id="reg-address" name="address">
+        </div>
+        
+        <div class="button-container">
+            <button type="submit" id="submit-register" class="btn" disabled>Registrar</button>
+            <button type="button" id="login-from-register" class="link-btn">Ya tengo cuenta, iniciar sesión</button>
+            <button type="button" id="back-to-main-from-register" class="link-btn">Volver a Inicio</button>
+        </div>
+    </form>
+  </main>
+
+  <main id="profile-view" class="view-container hidden">
+    <div class="profile-header">
+        <button id="logout-button" class="logout-icon-btn" aria-label="Cerrar Sesión">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 17L21 12M21 12L16 7M21 12H9M15 4V3C15 2.44772 14.5523 2 14 2H5C4.44772 2 4 2.44772 4 3V21C4 21.5523 4.44772 22 5 22H14C14.5523 22 15 21.5523 15 21V20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <img id="profile-card-pic" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiAxMy41QzE1LjA5NTMgMTMuNSAxNy42MjUgMTEuMDQ0MyAxNy42MjUgOEExLjUgMS41IDAgMCAwIDE3LjYyNSA1QzE3LjYyNSA2LjA0NDI5IDE1LjA5NTMgMy41IDEyIDMuNUM4LjkwNDcyIDMuNSAzLjA5NDM3IDYuMDQ0MjkgMy4wOTQzNyA4QTEuNSAxLjUgMCAwIDAgMy4wOTQzNyAxMUMzLjA5NDM3IDkuOTU1NzEgOC45MDQ3MiAxMy41IDEyIDEzLjVaTTE5LjUgMjAuNUMxOS41IDIwLjUgMjEgMjAgMjEgMTcuNUMyMSAxNC41IDE1LjUgMTQuNSAxMiAxNC41QzguNSAxNC41IDMgMTQuNSAzIDE3LjVDMyAyMCA0LjUgMjAuNSA0LjUgMjAuNUgxOS41WiIgZmlsbD0iI2NkY2RjZCIvPgo8L3N2Zz4K" alt="Foto de perfil">
+    </div>
+    
+    <div class="profile-info">
+        <h3 id="profile-card-name">Nombre Completo</h3>
+        <p id="profile-card-username">@usuario</p>
+    </div>
+
+    <div class="profile-actions">
+      <div class="main-actions-group">
+        <button id="edit-profile-button" class="btn">✏️ Editar Perfil</button>
+        <button id="register-pet-button" class="btn">🐾 Registrar Mascota</button>
+      </div>
+       <div class="main-actions-group">
+        <button id="publications-button" class="btn">📰 Publicaciones</button>
+        <button type="button" id="scan-qr-button" class="btn" aria-label="Escanear Código QR">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
+              <path d="M3 11H11V3H3V11ZM5 5H9V9H5V5Z" fill="white"></path>
+              <path d="M3 21H11V13H3V21ZM5 15H9V19H5V15Z" fill="white"></path>
+              <path d="M13 3V11H21V3H13ZM19 9H15V5H19V9Z" fill="white"></path>
+              <path d="M13 13H15V15H13V13Z" fill="white"></path><path d="M15 15H17V17H15V15Z" fill="white"></path>
+              <path d="M17 17H19V19H17V17Z" fill="white"></path><path d="M19 19H21V21H19V19Z" fill="white"></path>
+              <path d="M19 13H21V15H19V13Z" fill="white"></path><path d="M17 13H19V15H17V13Z" fill="white"></path>
+              <path d="M15 17H17V19H15V17Z" fill="white"></path><path d="M13 19H15V21H13V19Z" fill="white"></path>
+          </svg>
+          <span>Escanear QR</span>
+        </button>
+       </div>
+    </div>
+
+    <div class="details-wrapper">
+        <h4>Información</h4>
+        <div class="profile-details">
+            <div class="detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 20C16.5 21.1046 17.3954 22 18.5 22C19.6046 22 20.5 21.1046 20.5 20C20.5 18.8954 19.6046 18 18.5 18C17.3954 18 16.5 18.8954 16.5 20ZM16.5 20V4C16.5 2.89543 15.6046 2 14.5 2H5.5C4.39543 2 3.5 2.89543 3.5 4V20C3.5 21.1046 4.39543 22 5.5 22H14.5C15.6046 22 16.5 21.1046 16.5 20Z" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="profile-card-phone">123-456-7890</span>
+            </div>
+            <div class="detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round"/></svg>
+                <span id="profile-card-email">email@example.com</span>
+            </div>
+            <div class="detail-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 17.134 9.31371 14 6 14C2.68629 14 0 17.134 0 21" stroke="#8D5B4C" stroke-width="2" transform="translate(6 1)"/><path d="M12 9C12 11.7614 9.76142 14 7 14C4.23858 14 2 11.7614 2 9C2 6.23858 4.23858 4 7 4C9.76142 4 12 6.23858 12 9Z" stroke="#8D5B4C" stroke-width="2" transform="translate(5 0)"/></svg>
+                <span id="profile-card-address">Ciudad, País</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="pets-section">
+      <h2>Mis Mascotas</h2>
+      <div id="pets-list-container">
+        <!-- Pet cards will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <main id="edit-profile-view" class="view-container hidden">
+    <h2>Editar Perfil</h2>
+    <form class="form-container" id="edit-profile-form">
+        <div class="profile-pic-container">
+            <img id="edit-profile-pic-preview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ=Ik0xMiAxMy41QzE1LjA5NTMgMTMuNSAxNy42MjUgMTEuMDQ0MyAxNy42MjUgOEExLjUgMS41IDAgMCAwIDE3LjYyNSA1QzE3LjYyNSA2LjA0NDI5IDE1LjA5NTMgMy41IDEyIDMuNUM4LjkwNDcyIDMuNSAzLjA5NDM3IDYuMDQ0MjkgMy4wOTQzNyA4QTEuNSAxLjUgMCAwIDAgMy4wOTQzNyAxMUMzLjA5NDM3IDkuOTU1NzEgOC45MDQ3MiAxMy41IDEyIDEzLjVaTTE5LjUgMjAuNUMxOS41IDIwLjUgMjEgMjAgMjEgMTcuNUMyMSAxNC41IDE1LjUgMTQuNSAxMiAxNC41QzguNSAxNC41IDMgMTQuNSAzIDE3LjVDMyAyMCA0LjUgMjAuNSA0LjUgMjAuNUgxOS41WiIgZmlsbD0iI2NkY2RjZCIvPgo8L3N2Zz4K" alt="Vista previa de perfil">
+            <label for="edit-profile-pic" class="btn">Cambiar Foto</label>
+            <input type="file" id="edit-profile-pic" name="profile-pic" accept="image/*" class="hidden">
+        </div>
+
+        <div class="form-group">
+            <label for="edit-fullname">Nombre completo</label>
+            <input type="text" id="edit-fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-username">Usuario</label>
+            <input type="text" id="edit-username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-password">Nueva Contraseña (Opcional)</label>
+            <input type="password" id="edit-password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="edit-phone">Teléfono</label>
+            <input type="tel" id="edit-phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-email">Correo</label>
+            <input type="email" id="edit-email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="edit-address">Dirección</label>
+            <input type="text" id="edit-address" name="address">
+        </div>
+        
+        <div class="button-container">
+            <button type="submit" class="btn">💾 Guardar Cambios</button>
+            <button type="button" id="cancel-edit-button" class="link-btn">Cancelar</button>
+        </div>
+    </form>
+  </main>
+
+  <main id="register-pet-view" class="view-container hidden">
+    <h2>Registrar Nueva Mascota</h2>
+    <form class="form-container" id="register-pet-form">
+        <div class="profile-pic-container">
+            <img id="register-pet-pic-preview" class="pet-pic-preview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1Ljg2NCA4LjM2Mzk1QzE1Ljg2NCA5LjQxNDMyIDE1LjAyMzMgMTAuMjU1IDE0IDEwLjI1NUMxMi45NzY3IDEwLjI1NSAxMi4xMzYgOS40MTQzMiAxMi4xMzYgOC4zNjM5NUMxMi4xMzYgNy4zMTM1OCAxMi45NzY3IDYuNDcyOSAxNCA2LjQ3MjlDMTUuMDIzMyA2LjQ3MjkgMTUuODY0IDcuMzEzNTggMTUuODY0IDguMzYzOTVaTTguMTgxNTIgMTMuOTc3NEM5LjIwNDg4IDEzLjk3NzQgMTAuMDQ1NSA5LjQxNDMyIDEwLjA0NTUgMTIuMDg2M0MxMC4wNDU1IDExLjAzNiA5LjIwNDg4IDEwLjE5NTMgOC4xODE1MiAxMC4xOTUzQzcuMTU4MTYgMTAuMTOTUzIDYuMzE3NDkgMTEuMDM2IDYuMzE3NDkgMTIuMDg2M0M2LjMxNzQ5IDEzLjEzNjcgNy4xNTgxNiAxMy45Nzc0IDguMTgxNTIgMTMuOTc3NFoiIGZpbGw9IiM4RDVCNEMiLz4KPHBhdGggZD0iTTEwLjA0NTUgMTAuMjU1QzExLjA2ODggMTAuMjU1IDExLjkwOTUgOS40MTQzMiAxMS45MDk1IDguMzYzOTVDMTEuOTA5NSA3LjMxMzU4IDExLjA2ODggNi40NzI5IDEwLjA0NTUgNi40NzI5QzkuMDIyMTkgNi40NzI5IDguMTgxNTIgNy4zMTM1OCA4LjE4MTUyIDguMzYzOTVDOC4xODE1MiA5LjQxNDMyIDkuMDIyMTkgMTAuMjU1IDEwLjA0NTUgMTAuMjU1WiIgZmlsbD0iIzVEQUVDMyIvPgo8cGF0aCBkPSJNMTUuODY0IDEzLjk3NzRDMTYuODg3NCAxMy45Nzc0IDE3LjcyOCAxMy4xMzY3IDE3LjcyOCAxMi4wODYzQzE3LjcyOCAxMS4wMzYgMTYuODg3NCAxMC4xOTUzIDE1Ljg2NCAxMC4xOTUzQzE0Ljg0MDYgMTAuMTOTUzIDE0IDExLjAzNiAxNCAxMi4wODYzQzE0IDEzLjEzNjcgMTQuODQwNiAxMy45Nzc0IDE1Ljg2NCAxMy45Nzc0WiIgZmlsbD0iIzVEQUVDMyIvPgo8cGF0aCBkPSJNMTIgMThDMTQuMzUyMyAxOCAxNi4yNzI3IDE2LjIxNjIgMTYuMjcyNyAxNC4wNDU1QzE2LjI3MjcgMTEuODc0NyAxNC4zNTIzIDEwLjA5MDkgMTIgMTAuMDkwOUM5LjY0NzcyIDEwLjA5MDkgNy43MjcyNyAxMS44NzQ3IDcuNzI3MjcgMTQuMDQ1NUM3LjcyNzI3IDE2LjIxNjIgOS42NDc3MiAxOCAxMiAxOFoiIGZpbGw9IiM4RDVCNEMiLz4KPC9zdmc+Cg==" alt="Vista previa de mascota">
+            <label for="register-pet-pic" class="btn">Subir Foto</label>
+            <input type="file" id="register-pet-pic" name="pet-pic" accept="image/*" class="hidden" required>
+        </div>
+
+        <div class="form-group">
+            <label for="register-pet-name">Nombre</label>
+            <input type="text" id="register-pet-name" required>
+        </div>
+        <div class="form-group">
+            <label for="register-pet-breed">Raza</label>
+            <input type="text" id="register-pet-breed" required>
+        </div>
+        <div class="form-group">
+            <label for="register-pet-age">Edad</label>
+            <input type="text" id="register-pet-age" required>
+        </div>
+        <div class="form-group">
+            <label for="register-pet-status">Estado</label>
+            <select id="register-pet-status" required>
+                <option value="En casa">En casa</option>
+                <option value="Perdido">Perdido</option>
+                <option value="En adopción">En adopción</option>
+                <option value="Adoptado">Adoptado</option>
+                <option value="Encontrado">Encontrado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="register-pet-description">Descripción breve</label>
+            <textarea id="register-pet-description" rows="3"></textarea>
+        </div>
+        
+        <div class="button-container">
+            <button type="submit" class="btn">🐾 Registrar Mascota</button>
+            <button type="button" id="cancel-register-pet-button" class="link-btn">Cancelar</button>
+        </div>
+    </form>
+  </main>
+
+  <main id="edit-pet-view" class="view-container hidden">
+    <h2>Editar Mascota</h2>
+    <div class="owner-contact-info">
+      <p><strong>Dueño/a:</strong> <span id="edit-pet-owner-name"></span></p>
+      <p><strong>Contacto:</strong> <span id="edit-pet-owner-phone"></span></p>
+    </div>
+    <form class="form-container" id="edit-pet-form">
+        <input type="hidden" id="edit-pet-id">
+        <div class="profile-pic-container">
+            <img id="edit-pet-pic-preview" class="pet-pic-preview" src="" alt="Vista previa de mascota">
+            <label for="edit-pet-pic" class="btn">Cambiar Foto</label>
+            <input type="file" id="edit-pet-pic" name="pet-pic" accept="image/*" class="hidden">
+        </div>
+
+        <div class="form-group">
+            <label for="edit-pet-name">Nombre</label>
+            <input type="text" id="edit-pet-name" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-pet-breed">Raza</label>
+            <input type="text" id="edit-pet-breed" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-pet-age">Edad</label>
+            <input type="text" id="edit-pet-age" required>
+        </div>
+        <div class="form-group">
+            <label for="edit-pet-status">Estado</label>
+            <select id="edit-pet-status" required>
+                <option value="En casa">En casa</option>
+                <option value="Perdido">Perdido</option>
+                <option value="En adopción">En adopción</option>
+                <option value="Adoptado">Adoptado</option>
+                <option value="Encontrado">Encontrado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="edit-pet-description">Descripción breve</label>
+            <textarea id="edit-pet-description" rows="3"></textarea>
+        </div>
+        
+        <div class="button-container">
+            <button type="submit" class="btn">💾 Guardar Cambios</button>
+            <button type="button" id="cancel-edit-pet-button" class="link-btn">Cancelar</button>
+        </div>
+    </form>
+  </main>
+
+  <main id="publications-view" class="view-container hidden">
+    <button id="back-to-profile-from-publications" aria-label="Volver al Perfil">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h2>Publicaciones de la Comunidad</h2>
+    <form id="search-form">
+      <input type="search" id="search-input" placeholder="Buscar por nombre de mascota o usuario...">
+      <button type="submit" class="btn">🔍 Buscar</button>
+    </form>
+    <div id="filter-controls">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="mine">Mis Publicaciones</button>
+      <button class="filter-btn" data-filter="Perdido">Perdidos</button>
+      <button class="filter-btn" data-filter="Encontrado">Encontrados</button>
+      <button class="filter-btn" data-filter="En adopción">En adopción</button>
+      <button class="filter-btn" data-filter="Adoptado">Adoptados</button>
+    </div>
+    <div id="publications-container">
+      <!-- Publication cards will be dynamically inserted here -->
+    </div>
+    <div id="pagination-controls">
+      <!-- Pagination buttons will be inserted here -->
+    </div>
+  </main>
+
+  <div id="qr-code-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="qr-modal-close-btn" class="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <h3 id="qr-modal-title">Código QR</h3>
+      <img id="qr-modal-image" src="" alt="Código QR de la mascota">
+      <a id="qr-download-btn" href="#" download="qr-code.png" class="btn">Descargar QR</a>
+    </div>
+  </div>
+
+  <div id="qr-scanner-view" class="hidden">
+    <video id="qr-video" playsinline></video>
+    <div id="qr-scanner-overlay">
+        <div class="qr-scanner-box"></div>
+    </div>
+    <button id="cancel-scan-btn" class="btn">Cancelar</button>
+    <canvas id="qr-canvas" class="hidden"></canvas>
+  </div>
+
+  <div id="scanned-info-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="scanned-info-close-btn" class="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <h3>Información de Mascota</h3>
+      <div class="scanned-details">
+        <p><strong>Mascota:</strong> <span id="scanned-pet-name"></span></p>
+        <p><strong>Dueño/a:</strong> <span id="scanned-owner-name"></span></p>
+        <p><strong>Contacto:</strong> <span id="scanned-owner-phone"></span></p>
+      </div>
+      <a id="call-owner-btn" href="#" class="btn">📞 Llamar al Dueño/a</a>
+    </div>
+  </div>
+
+  <div id="delete-confirm-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h3>Confirmar Eliminación</h3>
+      <p>¿Estás seguro de que quieres eliminar esta mascota y su publicación? Esta acción es irreversible.</p>
+      <div class="modal-actions">
+        <button id="confirm-delete-btn" class="btn btn-danger">Sí, eliminar</button>
+        <button id="cancel-delete-btn" class="btn btn-secondary">No, cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="user-profile-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="user-profile-modal-close-btn" class="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <img id="user-profile-modal-pic" src="" alt="Foto de perfil del usuario" class="profile-modal-pic">
+      <h3 id="user-profile-modal-name">Nombre del Usuario</h3>
+      <p id="user-profile-modal-username" class="profile-modal-username">@username</p>
+      <div class="profile-modal-details">
+        <div class="detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 20C16.5 21.1046 17.3954 22 18.5 22C19.6046 22 20.5 21.1046 20.5 20C20.5 18.8954 19.6046 18 18.5 18C17.3954 18 16.5 18.8954 16.5 20ZM16.5 20V4C16.5 2.89543 15.6046 2 14.5 2H5.5C4.39543 2 3.5 2.89543 3.5 4V20C3.5 21.1046 4.39543 22 5.5 22H14.5C15.6046 22 16.5 21.1046 16.5 20Z" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span id="user-profile-modal-phone"></span>
+        </div>
+        <div class="detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="#8D5B4C" stroke-width="2" stroke-linecap="round"/></svg>
+            <span id="user-profile-modal-email"></span>
+        </div>
+        <div class="detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 17.134 9.31371 14 6 14C2.68629 14 0 17.134 0 21" stroke="#8D5B4C" stroke-width="2" transform="translate(6 1)"/><path d="M12 9C12 11.7614 9.76142 14 7 14C4.23858 14 2 11.7614 2 9C2 6.23858 4.23858 4 7 4C9.76142 4 12 6.23858 12 9Z" stroke="#8D5B4C" stroke-width="2" transform="translate(5 0)"/></svg>
+            <span id="user-profile-modal-address"></span>
+        </div>
+      </div>
+      <a id="user-profile-modal-call-btn" href="#" class="btn">📞 Llamar</a>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

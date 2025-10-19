@@ -1,0 +1,7 @@
+{
+  "name": "Patitas Conectadas 1",
+  "description": "Una aplicación para la adopción y reconocimiento de mascotas perdidas.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
